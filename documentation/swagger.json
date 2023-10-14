@@ -1,0 +1,267 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Tugas-9",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/api/registration": {
+      "post": {
+        "tags": ["Misc"],
+        "summary": "User Create Register",
+        "operationId": "api/registration",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "example": {
+                      "id": 199,
+                      "email": "mail@mail.com",
+                      "gender": "Male",
+                      "password": "12345678",
+                      "role": "User"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 199,
+                "email": "mail@mail.com",
+                "gender": "Male",
+                "password": "12345678",
+                "role": "User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "message": "Registration successfull"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/login": {
+      "post": {
+        "tags": ["Misc"],
+        "summary": "Login",
+        "operationId": "LoginUsers",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "example": {
+                      "email": "admin@yahoo.com",
+                      "password": "12345678"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "admin@yahoo.com",
+                "password": "12345678"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/movies": {
+      "get": {
+        "tags": ["Misc"],
+        "summary": "Movies",
+        "operationId": "Movies",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 12
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": ["Misc"],
+        "summary": "Movies Create",
+        "operationId": "MoviesCreate",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "example": {
+                      "id": 999,
+                      "title": "One Piece",
+                      "genres": "Action|Adventure",
+                      "year": 1999
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 999,
+                "title": "One Piece",
+                "genres": "Action|Adventure",
+                "year": 1999
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/999": {
+      "put": {
+        "tags": ["Misc"],
+        "summary": "Movies Update",
+        "operationId": "MoviesUpdate",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "example": {
+                      "id": 999,
+                      "title": "One Piece",
+                      "genres": "Action|Adventure|Anime",
+                      "year": 2023
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 999,
+                "title": "One Piece",
+                "genres": "Action|Adventure|Anime",
+                "year": 2023
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": ["Misc"],
+        "summary": "Movies Delete",
+        "operationId": "MoviesDelete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": ["Misc"],
+        "summary": "Movie By Id",
+        "operationId": "Movie By Id",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 12
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "security": [],
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
